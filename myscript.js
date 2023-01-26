@@ -22,8 +22,8 @@ function playerSelection() {
 function gamePlay(computer, player) {
   computer = getComputerChoice()
   player = playerSelection()
-  console.log(computer)
-  console.log(player)
+  console.log("Computers selection -- " + computer)
+  console.log("Your selection -- " + player)
   if (computer === player) {
     return "Draw! Go again"
   } else if (computer === "paper" && player === "rock") {
@@ -33,6 +33,6 @@ function gamePlay(computer, player) {
   } else if (computer === "rock" && player === "scissors") {
     return "Computer wins.."
   }
-  else return "You win!"
+  else return "You win! 🏆"
 }
 console.log(gamePlay());
