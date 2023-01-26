@@ -12,3 +12,9 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice());
 
+function playerSelection() {
+  const selection = prompt("What is your selection? ");
+  return selection.toLowerCase();
+}
+
+console.log(playerSelection());
