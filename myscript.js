@@ -22,15 +22,14 @@ function playerSelection() {
 let playerScore = 0
 let computerScore = 0
 const draw = "Draw! Go again"
-const win = "You win!  🏆" && playerScore++
-const lose = "Computer wins.." && computerScore++
+const win = "You win!  🏆"
+const lose = "Computer wins.."
 
 
 function playRound(computer, player) {
   computer = getComputerChoice()
   player = playerSelection()
-  console.log("Computers selection -- " + computer)
-  console.log("Your selection -- " + player)
+  console.log(`Computer = ${computer} - Player = ${player}`);
   if (computer === player) {
     return draw
   } else if (computer === "paper" && player === "rock") {
@@ -45,10 +44,15 @@ function playRound(computer, player) {
 
 for (let i = 0; i < 5; i++) {
   playRound()
-  console.log("Player: " + playerScore)
-  console.log("Computer: " + computerScore)
+  if (playRound() === win) {
+    playerScore++
+  }
+  else if (playRound() === lose) {
+    computerScore++
+  }
+  else
+  console.log("yeaboi")
 }
 
 // console.log(playRound());
-// console.log("Player: " + playerScore)
-// console.log("Computer: " + computerScore)
+console.log(`Final score is: computer ${computerScore} - player ${playerScore}`);
