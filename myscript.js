@@ -19,20 +19,32 @@ function playerSelection() {
 }
 // console.log(playerSelection());
 
-function gamePlay(computer, player) {
+let playerScore = 0
+let computerScore = 0
+const draw = "Draw! Go again"
+const win = "You win!  🏆" && playerScore++
+const lose = "Computer wins.." && computerScore++
+
+
+function playRound(computer, player) {
   computer = getComputerChoice()
   player = playerSelection()
   console.log("Computers selection -- " + computer)
   console.log("Your selection -- " + player)
   if (computer === player) {
-    return "Draw! Go again"
+    return draw
   } else if (computer === "paper" && player === "rock") {
-    return "Computer wins.."
+    return lose
   } else if (computer === "scissors" && player === "paper") {
-    return "Computer wins.."
+    return lose
   } else if (computer === "rock" && player === "scissors") {
-    return "Computer wins.."
+    return lose
   }
-  else return "You win! 🏆"
+  else return win
 }
-console.log(gamePlay());
+
+// function game()
+
+console.log(playRound());
+console.log("Player: " + playerScore)
+console.log("Computer: " + computerScore)
