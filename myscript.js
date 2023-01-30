@@ -43,8 +43,12 @@ function playRound(computer, player) {
   else return win
 }
 
-// function game()
+for (let i = 0; i < 5; i++) {
+  playRound()
+  console.log("Player: " + playerScore)
+  console.log("Computer: " + computerScore)
+}
 
-console.log(playRound());
-console.log("Player: " + playerScore)
-console.log("Computer: " + computerScore)
+// console.log(playRound());
+// console.log("Player: " + playerScore)
+// console.log("Computer: " + computerScore)
