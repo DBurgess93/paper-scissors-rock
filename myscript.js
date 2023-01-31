@@ -21,38 +21,31 @@ function playerSelection() {
 
 let playerScore = 0
 let computerScore = 0
-const draw = "Draw! Go again"
-const win = "You win!  🏆"
-const lose = "Computer wins.."
+let roundWinner = ''
 
 
 function playRound(computer, player) {
   computer = getComputerChoice()
   player = playerSelection()
-  console.log(`Computer = ${computer} - Player = ${player}`);
+  console.log(`Computer: ${computer} - Player: ${player}`);
   if (computer === player) {
-    return draw
+    return (roundWinner = "draw")
   } else if (computer === "paper" && player === "rock") {
-    return lose
+    return computerScore++ && (roundWinner = "computer")
   } else if (computer === "scissors" && player === "paper") {
-    return lose
+    return computerScore++ && (roundWinner = "computer")
   } else if (computer === "rock" && player === "scissors") {
-    return lose
+    return computerScore++ && (roundWinner = "computer")
   }
-  else return win
+  else
+  return playerScore++ && (roundWinner = "player")
 }
 
 for (let i = 0; i < 5; i++) {
-  playRound()
-  if (playRound() === win) {
-    playerScore++
-  }
-  else if (playRound() === lose) {
-    computerScore++
-  }
-  else
-  console.log("yeaboi")
+  console.log(playRound())
 }
 
 // console.log(playRound());
-console.log(`Final score is: computer ${computerScore} - player ${playerScore}`);
+console.log(`computer ${computerScore} - player ${playerScore}`);
+
+// full re-arrange required
