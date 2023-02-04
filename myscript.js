@@ -23,19 +23,20 @@ function playRound(computer, player) {
   console.log(`Computer: ${computer} - Player: ${player}`);
   if (computer === player) {
     return (roundWinner = "draw")
-  } else if (computer === "paper" && player === "rock") {
-    return computerScore++ && (roundWinner = "computer")
-  } else if (computer === "scissors" && player === "paper") {
-    return computerScore++ && (roundWinner = "computer")
-  } else if (computer === "rock" && player === "scissors") {
+  } else if (
+    (computer === "paper" && player === "rock") ||
+    (computer === "scissors" && player === "paper") ||
+    (computer === "rock" && player === "scissors")
+  )
+  {
     return computerScore++ && (roundWinner = "computer")
   }
-  else
-  return playerScore++ && (roundWinner = "player")
+  else {
+  return playerScore++ && (roundWinner = "player") }
 }
 
 for (let i = 0; i < 5; i++) {
-  console.log(playRound())
+  playRound()
 }
 
 // console.log(playRound());
