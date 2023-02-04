@@ -1,16 +1,23 @@
 
-
+// Get computer choise
 function getComputerChoice() {
   const options = ["paper", "scissors", "rock"]
   return options[Math.floor(Math.random() * options.length)];
 }
 
-// Function to get players choice
+// Get players choice
 function playerSelection() {
   const selection = prompt("What is your selection? ");
   return selection.toLowerCase();
 }
-// console.log(playerSelection());
+
+function gameWinner() {
+  if (playerScore === 5 && playerScore > computerScore)
+  alert("You win!")
+  else
+  alert("You lose!")
+}
+
 
 let playerScore = 0
 let computerScore = 0
@@ -42,3 +49,4 @@ function playRound(computer, player) {
   }
 
   console.log(`Final Score: Player = ${playerScore} vs Computer = ${computerScore}`);
+  gameWinner();
