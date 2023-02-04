@@ -35,11 +35,10 @@ function playRound(computer, player) {
   return playerScore++ && (roundWinner = "player") }
 }
 
-for (let i = 0; i < 5; i++) {
-  playRound()
-}
 
-// console.log(playRound());
-console.log(`computer ${computerScore} - player ${playerScore}`);
+  while (playerScore < 5 && computerScore < 5) {
+    playRound();
+    console.log(`Player: ${playerScore} vs Computer: ${computerScore} - Round Winner: ${roundWinner}`);
+  }
 
-// full re-arrange required
+  console.log(`Final Score: Player = ${playerScore} vs Computer = ${computerScore}`);
